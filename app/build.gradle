@@ -17,6 +17,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField String.class.simpleName, 'API_HOST', "\"https://data.taipei/\""
     }
 
     buildTypes {
@@ -39,6 +41,17 @@ dependencies {
     implementation "com.google.dagger:hilt-android:${hilt_version}"
     kapt "com.google.dagger:hilt-compiler:${hilt_version}"
     kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    // endregion
+
+    // region okhttp/retrofit
+    implementation platform("com.squareup.okhttp3:okhttp-bom:4.10.0")
+    implementation 'com.squareup.okhttp3:okhttp'
+    implementation 'com.squareup.okhttp3:logging-interceptor'
+
+    implementation "com.squareup.retrofit2:retrofit:${retrofit_version}"
+    implementation "com.squareup.retrofit2:converter-moshi:${retrofit_version}"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:${moshi_version}"
+    implementation "com.squareup.moshi:moshi-kotlin:${moshi_version}"
     // endregion
 
     implementation 'androidx.core:core-ktx:1.9.0'
