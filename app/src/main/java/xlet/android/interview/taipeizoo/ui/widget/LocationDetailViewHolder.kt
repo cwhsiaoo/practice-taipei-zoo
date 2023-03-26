@@ -3,6 +3,7 @@ package xlet.android.interview.taipeizoo.ui.widget
 import android.net.Uri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import xlet.android.interview.taipeizoo.databinding.ItemLocationDetailBinding
 
 class LocationDetailViewHolder(
@@ -14,6 +15,7 @@ class LocationDetailViewHolder(
         binding.btnOpenWeb.setOnClickListener {
             onClickLink.invoke(data.link)
         }
+        binding.ivPhoto.load(data.picUri)
         binding.tvDescription.text = data.info
     }
 }
