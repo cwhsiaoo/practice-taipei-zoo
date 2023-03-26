@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TaipeiZoo</string>
+    <string name="action_open_webpage">開啟網頁</string>
+    <string name="subtitle_plant">植物資料</string>
 </resources>
